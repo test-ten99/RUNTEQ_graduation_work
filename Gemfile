@@ -60,3 +60,4 @@ end
 
 gem 'devise'
 gem 'rails-ujs'
+gem "dockerfile-rails", ">= 1.7", :group => :development
