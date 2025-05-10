@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get "mypage", to: "users#show"
+
+  resources :artists, only: [:new, :create, :index, :edit, :update, :destroy]
 end

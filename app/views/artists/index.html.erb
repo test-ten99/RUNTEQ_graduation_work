@@ -1,0 +1,23 @@
+<h2>登録済みアーティスト</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @artists.each do |artist| %>
+      <tr>
+        <td><%= artist.name %></td>
+        <td>
+          <%= link_to "編集", edit_artist_path(artist), class: "btn btn-outline-primary btn-sm" %>
+          <%= link_to "削除", artist_path(artist), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-danger btn-sm" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "新しいアーティストを登録", new_artist_path, class: "btn btn-success" %>

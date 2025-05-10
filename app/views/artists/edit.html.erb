@@ -1,0 +1,20 @@
+<h2>アーティスト情報の編集</h2>
+
+<%= form_with model: @artist, local: true do |form| %>
+  <% if @artist.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @artist.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, "アーティスト名" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <%= form.submit "更新", class: "btn btn-primary" %>
+<% end %>
