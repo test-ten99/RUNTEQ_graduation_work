@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "mypage", to: "users#show"
 
-  resources :artists, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :artists, only: [ :new, :create, :index, :edit, :update, :destroy ]
 end
