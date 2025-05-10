@@ -1,6 +1,6 @@
 class LiveRecord < ApplicationRecord
   belongs_to :user
-  # belongs_to :artist（アーティストテーブル作成後に追加）
+  belongs_to :artist
 
   validates :location, presence: true, length: { maximum: 100 }
   validates :date, presence: true
