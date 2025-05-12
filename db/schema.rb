@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_05_10_090431) do
+ActiveRecord::Schema[7.2].define(version: 2025_05_12_141415) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,23 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_10_090431) do
     t.index ["user_id"], name: "index_live_records_on_user_id"
   end
 
+  create_table "setlists", force: :cascade do |t|
+    t.bigint "live_record_id", null: false
+    t.bigint "song_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["live_record_id"], name: "index_setlists_on_live_record_id"
+    t.index ["song_id"], name: "index_setlists_on_song_id"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.integer "track_number"
+    t.string "title"
+    t.string "spotify_track_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -46,4 +63,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_10_090431) do
 
   add_foreign_key "artists", "users"
   add_foreign_key "live_records", "users"
+  add_foreign_key "setlists", "live_records"
+  add_foreign_key "setlists", "songs"
 end
