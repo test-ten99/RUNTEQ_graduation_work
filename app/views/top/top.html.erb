@@ -1,0 +1,41 @@
+<%= render 'top/header' %>
+<div class="top-page">
+  <!-- ヒーローエリア -->
+  <div class="hero-image-container text-center position-relative">
+    <%= image_tag "top_hero1.png", class: "w-100 hero-img" %>
+    <div class="hero-text position-absolute top-50 start-50 translate-middle text-white">
+      <h1 class="display-4 fw-bold">あの日の熱狂、記録してる？</h1>
+    </div>
+  </div>
+
+  <!-- 紹介ブロック -->
+  <section class="intro container py-5">
+    <h2 class="text-center mb-4">最高だったあの体験をいつでも振り返ろう</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-3 text-center">
+        <%= image_tag("top_explain.png", alt: "ライブのイメージ", style: "width: 400px; height: auto;", class: "img-fluid rounded") %>
+      </div>
+      <div class="col-md-6">
+        <p>Re:Liveは、あなたが参加したライブをいつでも記録し、振り返ることができる音楽特化アルバムアプリです。</p>
+        <p>その時好きだったアーティスト、よくいった会場、セットリスト、会場の雰囲気、その時にしか味わえなかった瞬間を、いつまでもその手に。</p>
+        <a href="/users/sign_up" class="btn btn-primary mt-3">Re:Liveを利用する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 特徴セクション -->
+  <section class="features bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Re:Liveの特徴</h2>
+      <ul class="list-unstyled fs-5 text-center">
+        <li>・好きなアーティストを登録！</li>
+        <li>・ライブの思い出をセットリストや写真と共に記録！</li>
+        <li>・登録したセットリストをSpotifyでいつでも再生できる！</li>
+      </ul>
+      <div class="text-center">
+        <a href="/users/sign_up" class="btn btn-success mt-3">Re:Liveを利用する</a>
+      </div>
+    </div>
+  </section>
+</div>
+<%= render 'top/footer' %>

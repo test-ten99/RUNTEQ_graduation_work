@@ -1,0 +1,26 @@
+.hero-image-container {
+  position: relative;
+  width: 100%;
+}
+
+.hero-img {
+  width: 100%;
+  height: 400px !important; /* お好みで 300px 〜 500px 程度 */
+  object-fit: cover;
+  display: block;
+}
+
+.hero-text {
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.top-page h1, h2 {
+  font-weight: bold;
+}
+
+
+.bg-relive {
+  background-color: #3A91B8 !important;
+  color: white;
+}
