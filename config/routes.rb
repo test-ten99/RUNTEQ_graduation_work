@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "live_records/new"
+  get "live_records/create"
   root "top#top"
 
   get "top/top"
@@ -19,4 +21,8 @@ Rails.application.routes.draw do
   get "mypage", to: "users#show"
 
   resources :artists, only: [ :new, :create, :index, :edit, :update, :destroy ]
+
+  resources :live_records do
+    resources :setlists, only: [:create, :destroy], shallow: true
+  end
 end
