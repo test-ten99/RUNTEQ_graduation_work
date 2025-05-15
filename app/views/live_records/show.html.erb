@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">ライブ記録の詳細</h2>
+
+  <div class="card mx-auto" style="max-width: 800px;">
+    <div class="card-body">
+      <h4 class="card-title"><%= @live_record.live_title %></h4>
+      <p><strong>アーティスト名:</strong> <%= @live_record.artist.name %></p>
+      <p><strong>会場:</strong> <%= @live_record.location %></p>
+      <p><strong>日時:</strong> <%= @live_record.date.strftime("%Y年%m月%d日") %></p>
+
+      <% if @live_record.image.attached? %>
+        <div class="mb-3">
+          <%= image_tag @live_record.image, class: "img-fluid rounded" %>
+        </div>
+      <% end %>
+
+      <h5>セットリスト</h5>
+      <ol>
+        <% @live_record.songs.order(:track_number).each do |song| %>
+          <li><%= song.title %></li>
+        <% end %>
+      </ol>
+
+      <div class="d-flex flex-wrap justify-content-between mt-4">
+        <%= link_to "Spotifyで再生", "#", class: "btn btn-success mb-2" %>
+        <%= link_to "Xでポストする", "#", class: "btn btn-info text-white mb-2" %>
+        <%= link_to "編集する", edit_live_record_path(@live_record), class: "btn btn-warning mb-2" %>
+        <%= link_to "削除する", live_record_path(@live_record), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger mb-2" %>
+      </div>
+    </div>
+  </div>
+</div>

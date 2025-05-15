@@ -1,0 +1,24 @@
+<h2 class="text-center my-4">マイライブ記録</h2>
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <% @live_records.each do |record| %>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><%= record.artist.name %></h5>
+            <p class="card-text"><strong>ライブ名:</strong> <%= record.live_title %></p>
+            <p class="card-text"><strong>会場:</strong> <%= record.location %></p>
+            <p class="card-text"><strong>日付:</strong> <%= record.date.strftime("%Y年%m月%d日") %></p>
+
+            <div class="d-flex justify-content-between mt-3">
+              <%= link_to "詳細", live_record_path(record), class: "btn btn-outline-primary btn-sm" %>
+              <%= link_to "編集", edit_live_record_path(record), class: "btn btn-outline-secondary btn-sm" %>
+              <%= link_to "削除", live_record_path(record), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-danger btn-sm" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

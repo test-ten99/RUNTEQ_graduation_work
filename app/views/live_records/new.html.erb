@@ -32,17 +32,21 @@
           </div>
 
           <h4 class="mt-4 mb-3">セットリスト</h4>
-          <div data-controller="song-form">
-            <div id="songs" data-song-form-target="container">
-              <%= f.fields_for :songs do |song_form| %>
-                <div class="mb-2">
-                  <%= song_form.label :title, "曲名" %>
-                  <%= song_form.text_field :title, class: "form-control" %>
-                </div>
-              <% end %>
+            <div data-controller="song-form">
+              <div id="songs" data-song-form-target="container"></div>
+
+              <button type="button" class="btn btn-secondary mt-2" data-action="click->song-form#addSong">
+                曲を追加する
+              </button>
             </div>
-            <button type="button" class="btn btn-outline-secondary mt-2" data-action="click->song-form#addSong">曲を追加する</button>
-          </div>
+
+            <!-- 入力フィールド用テンプレート（非表示） -->
+            <template id="song-template">
+              <div class="mb-2">
+                <label>__NUM__</label>
+                <input type="text" name="live_record[songs_attributes][__INDEX__][title]" class="form-control" />
+              </div>
+            </template>
 
           <div class="mt-4 text-center">
             <%= f.submit "登録する", class: "btn btn-primary px-5" %>
