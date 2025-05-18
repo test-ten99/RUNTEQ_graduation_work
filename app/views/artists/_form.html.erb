@@ -10,9 +10,11 @@
   <% end %>
 
   <div class="mb-3">
-    <%= form.label :name, "アーティスト名" %>
+    <%= form.label :name, "アーティスト名", class: "form-label fw-bold" %>
     <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <%= form.submit "登録", class: "btn btn-primary" %>
+  <div class="text-center">
+    <%= form.submit artist.new_record? ? "登録" : "更新", class: "btn btn-primary px-4" %>
+  </div>
 <% end %>
