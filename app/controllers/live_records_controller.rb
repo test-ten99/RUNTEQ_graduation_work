@@ -53,6 +53,6 @@ class LiveRecordsController < ApplicationController
   private
 
   def live_record_params
-    params.require(:live_record).permit(:artist_id, :live_title, :location, :date, :image, songs_attributes: [:id, :title, :track_number, :_destroy])
+    params.require(:live_record).permit(:artist_id, :live_title, :location, :date, :image, songs_attributes: [ :id, :title, :track_number, :_destroy ])
   end
 end
