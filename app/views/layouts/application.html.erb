@@ -19,6 +19,14 @@
 
   <body>
     <%= render "shared/flash" %>
-    <%= yield %>
+    <% if user_signed_in? %>
+      <%= render "shared/navbar" %>
+        <main class="flex-grow-1 p-4">
+          <%= yield %>
+        </main>
+      </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>

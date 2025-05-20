@@ -1,0 +1,53 @@
+<div class="container mt-5 mb-5" style="max-width: 700px;">
+  <h2 class="mb-4 text-center">ライブ記録を編集する</h2>
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <%= form_with model: @live_record, local: true do |f| %>
+        <div class="mb-3">
+          <%= f.label :artist_id, "アーティスト名" %>
+          <%= f.collection_select :artist_id, @artists, :id, :name, { prompt: "選択してください" }, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :live_title, "ライブ名" %>
+          <%= f.text_field :live_title, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :location, "会場" %>
+          <%= f.text_field :location, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :date, "日時" %>
+          <%= f.date_select :date, {}, { class: "form-select d-inline w-auto me-2" } %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :image, "写真" %>
+          <%= f.file_field :image, class: "form-control" %>
+        </div>
+
+        <h4 class="mt-4 mb-3">セットリスト</h4>
+        <div data-controller="song-form">
+          <div id="songs" data-song-form-target="container">
+            <%= f.fields_for :songs, @live_record.songs.sort_by(&:track_number) do |song_form| %>
+              <div class="mb-2 song-fields">
+                <% index = song_form.index || 0 %>
+                <%= song_form.label :title, "#{index.to_i + 1}曲目", class: "form-label" %>
+                <%= song_form.text_field :title, class: "form-control" %>
+                <%= song_form.hidden_field :id %>
+                <%= song_form.hidden_field :track_number, value: song_form.object.track_number %>
+              </div>
+            <% end %>
+          </div>
+          <button type="button" class="btn btn-outline-secondary btn-sm mt-2" data-action="click->song-form#addSong">曲を追加する</button>
+        </div>
+
+        <div class="mt-4 text-center">
+          <%= f.submit "更新する", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="d-flex" style="min-height: 100vh;">
+<nav class="flex-shrink-0 p-3" style="width: 20%; background-color: #C3F5FD;">
+    <h4 class="text-center fw-bold mb-4">Re:Live</h4>
+    <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item mb-2">
+        <%= link_to "マイライブ記録", live_records_path, class: "nav-link nav-custom" %>
+    </li>
+
+    <li class="nav-item mb-2">
+        <%= link_to "新規ライブ登録", new_live_record_path, class: "nav-link nav-custom" %>
+    </li>
+
+    <li class="nav-item mb-2">
+        <%= link_to "アーティスト一覧", artists_path, class: "nav-link nav-custom" %>
+    </li>
+
+    <li class="nav-item mb-2">
+        <%= link_to "新規アーティスト登録", new_artist_path, class: "nav-link nav-custom" %>
+    </li>
+
+    <li class="nav-item mt-4">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link text-danger nav-custom" %>
+    </li>
+    </ul>
+</nav>
