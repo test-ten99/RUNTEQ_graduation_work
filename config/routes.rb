@@ -14,11 +14,11 @@ Rails.application.routes.draw do
 
   # ライブ記録とセットリストのルーティング
   resources :live_records do
-    resources :setlists, only: [:create, :destroy], shallow: true
+    resources :setlists, only: [ :create, :destroy ], shallow: true
   end
 
   # アーティスト登録・管理
-  resources :artists, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :artists, only: [ :new, :create, :index, :edit, :update, :destroy ]
 
   # 不要な仮置きルートを削除
   # get "live_records/new" や get "live_records/create" は resources に含まれているため不要
