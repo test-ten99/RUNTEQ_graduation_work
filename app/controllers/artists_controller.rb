@@ -18,6 +18,12 @@ before_action :authenticate_user!
     end
   end
 
+  def show
+    @artist = current_user.artists.find(params[:id])
+    spotify_artist = RSpotify::Artist.search(@artist.name).first
+    @spotify_artist_id = spotify_artist&.id
+  end
+
   def edit
     @artist = current_user.artists.find(params[:id])
   end

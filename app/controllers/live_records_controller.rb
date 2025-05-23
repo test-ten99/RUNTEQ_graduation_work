@@ -6,7 +6,6 @@ class LiveRecordsController < ApplicationController
   def new
     @live_record = LiveRecord.new
     @artists = current_user.artists
-    5.times { @live_record.songs.build } # 最初に5曲分のフォームを用意
   end
 
   def create
