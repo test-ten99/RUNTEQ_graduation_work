@@ -25,7 +25,9 @@
 
       <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
         <%= link_to "Spotifyで再生", "#", class: "btn btn-success shadow-sm px-3" %>
-        <%= link_to "Xでポストする", "#", class: "btn btn-info text-white shadow-sm px-3" %>
+        <%= link_to "Xでポストする",
+        "https://twitter.com/intent/tweet?text=#{ERB::Util.url_encode("#{ @live_record.artist.name }の#{ @live_record.live_title }＠#{ @live_record.location }行ってきたー！\nすごく楽しかった！！\n#ReLive")}",
+        target: "_blank", rel: "noopener", class: "btn btn-info text-white shadow-sm px-3" %>
         <%= link_to "編集する", edit_live_record_path(@live_record), class: "btn btn-warning shadow-sm px-3" %>
         <%= link_to "削除する", live_record_path(@live_record), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger shadow-sm px-3" %>
       </div>
