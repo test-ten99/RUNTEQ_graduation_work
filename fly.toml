@@ -28,3 +28,6 @@ console_command = '/rails/bin/rails console'
 [[statics]]
   guest_path = '/rails/public'
   url_prefix = '/'
+
+[build.args]
+  SKIP_SPOTIFY_INIT = "true"
