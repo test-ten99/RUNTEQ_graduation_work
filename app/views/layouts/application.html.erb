@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Myapp" %></title>
+    <title><%= content_for(:title) || "Re:Live" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -35,11 +35,11 @@
       <%= yield %>
     </div>
     <% else %>
-      <%= render "top/header" %>
+      <%= render "shared/header" %>
         <%= render "shared/flash" %>
         <%= yield %>
       </div>
-      <%= render 'top/footer' %>
+      <%= render 'shared/footer' %>
     <% end %>
     <!-- ▼ ここにAOSのJSを defer付きで追加 ▼ -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>

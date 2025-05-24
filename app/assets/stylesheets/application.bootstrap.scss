@@ -2,23 +2,20 @@
 @use 'bootstrap-icons/font/bootstrap-icons';
 @use 'top_page';
 
-.nav-custom {
-  color: #000;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
+// .relive-logo {
+//   font-family: 'Inter', sans-serif;
+//   font-size: 2rem;
+//   font-weight: 700;
+//   letter-spacing: 1px;
+//   color: #3A91B8;
+// }
 
-.nav-custom:hover {
-  background-color: #b2eaf7;
-  border-radius: 5px;
-}
-
+// Re:Liveロゴ（全体統一）
 .relive-logo {
   font-family: 'Inter', sans-serif;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #3A91B8;
 }
 
 // サイドバー背景色とレイアウト
@@ -46,13 +43,7 @@
   text-decoration: none;
 }
 
-// Re:Liveロゴ（全体統一）
-.relive-logo {
-  font-family: 'Inter', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
+
 
 // ログアウトリンク専用スタイル
 .logout-link {

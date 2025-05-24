@@ -1,8 +1,3 @@
-.hero-image-container {
-  position: relative;
-  width: 100%;
-}
-
 .hero-img {
   width: 100%;
   height: 500px !important;
@@ -10,18 +5,8 @@
   display: block;
 }
 
-.hero-text {
-  z-index: 2;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-}
-
 .top-page h1, h2 {
   font-weight: bold;
-}
-
-.bg-relive {
-  background-color: #3A91B8 !important;
-  color: white;
 }
 
 .hero-overlay h1, .hero-overlay p {
@@ -33,25 +18,7 @@
   font-size: 2.5rem;
 }
 
-.footer-logo {
-  height: 48px;
-  width: auto;
-}
-
-footer a:hover {
-  text-decoration: underline;
-  color: #C3F5FD; /* アプリカラーアクセント */
-}
-
-.custom-footer {
-  background-color: #3A91B8;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-  color: #C3F5FD; /* ホバー時アクセントカラー */
-}
-
+// ヘッダーデザイン
 .bg-relive {
   background-color: #3A91B8 !important;
   color: white;
@@ -92,4 +59,24 @@ footer a:hover {
 .btn-light.custom-header-btn:hover {
   background-color: #C3F5FD;
   color: #3A91B8;
+}
+
+// フッターデザイン
+.footer-logo {
+  height: 48px;
+  width: auto;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #C3F5FD; /* アプリカラーアクセント */
+}
+
+.custom-footer {
+  background-color: #3A91B8;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #C3F5FD; /* ホバー時アクセントカラー */
 }

@@ -9,6 +9,6 @@ class LiveRecord < ApplicationRecord
 
   validates :location, presence: true, length: { maximum: 100 }
   validates :date, presence: true
-  validates :live_title, length: { maximum: 100 }, allow_blank: true
+  validates :live_title, presence: true, length: { maximum: 100 }
   validates :user_id, presence: true
 end
