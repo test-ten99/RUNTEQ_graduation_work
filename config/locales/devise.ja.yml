@@ -1,0 +1,63 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認用）"
+        remember_me: "ログイン状態を保持する"
+        current_password: "現在のパスワード"
+        new_password: "新しいパスワード"
+        confirm_password: "パスワード（確認用）"
+  devise:
+    failure:
+      already_authenticated: "すでにログインしています。"
+      inactive: "アカウントが無効です。"
+      invalid: "メールアドレスまたはパスワードが違います。"
+      locked: "アカウントがロックされています。"
+      last_attempt: "次に失敗するとアカウントがロックされます。"
+      not_found_in_database: "メールアドレスまたはパスワードが違います。"
+      timeout: "セッションがタイムアウトしました。もう一度ログインしてください。"
+      unauthenticated: "ログインまたはアカウント登録してください。"
+      unconfirmed: "アカウントの確認が必要です。"
+    registrations:
+      new:
+        sign_up: "新規登録"
+      edit:
+        edit: "登録情報を編集"
+        cancel: "キャンセル"
+      signed_up: "アカウント登録が完了しました。"
+      signed_up_but_unconfirmed: "確認メールを送信しました。メールをご確認ください。"
+      updated: "アカウント情報を更新しました。"
+      update_needs_confirmation: "メールアドレスを変更したため、確認メールを送信しました。新しいアドレスをご確認ください。"
+      destroyed: "アカウントを削除しました。ご利用ありがとうございました。"
+    sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+      already_signed_out: "すでにログアウト済みです。"
+    shared:
+      links:
+        sign_in: "ログイン"
+        sign_up: "新規登録"
+        forgot_your_password: "パスワードをお忘れですか？"
+        sign_in_with: "%{provider}でログイン"
+        resend_confirmation_instructions: "確認メールを再送する"
+  date:
+    order:
+      - :year
+      - :month
+      - :day
+    month_names:
+      - ~
+      - "1月"
+      - "2月"
+      - "3月"
+      - "4月"
+      - "5月"
+      - "6月"
+      - "7月"
+      - "8月"
+      - "9月"
+      - "10月"
+      - "11月"
+      - "12月"

@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4 fs-3 fw-bold">アーティスト詳細</h2>
+
+  <div class="mx-auto p-4 rounded shadow-sm" style="max-width: 720px; background-color: #F0FAFF;">
+    <h4 class="text-center mb-4 fs-4 fw-semibold">🎵 <%= @artist.name %></h4>
+
+    <% if @spotify_artist_id.present? %>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/<%= @spotify_artist_id %>?utm_source=generator"
+        width="100%" height="380" frameborder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
+    <% else %>
+      <p class="text-muted">Spotify情報が見つかりませんでした。</p>
+    <% end %>
+
+    <div class="d-flex justify-content-center gap-3">
+      <%= link_to "編集する", edit_artist_path(@artist), class: "btn btn-primary shadow-sm px-3" %>
+      <%= link_to "削除する", artist_path(@artist), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger shadow-sm px-3" %>
+      <%= link_to "一覧に戻る", artists_path, class: "btn btn-secondary shadow-sm px-3" %>
+    </div>
+  </div>
+</div>

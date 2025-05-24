@@ -12,6 +12,7 @@
       <tr>
         <td><%= artist.name %></td>
         <td>
+          <%= link_to "詳細", artist_path(artist), class: "btn btn-outline-info btn-sm" %>
           <%= link_to "編集", edit_artist_path(artist), class: "btn btn-outline-primary btn-sm" %>
           <%= link_to "削除", artist_path(artist), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-danger btn-sm" %>
         </td>

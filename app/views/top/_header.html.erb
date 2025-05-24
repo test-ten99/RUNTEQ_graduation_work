@@ -1,9 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light bg-relive">
+<nav class="navbar navbar-expand-lg bg-relive shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="/">Re:Live</a>
-    <div class="ms-auto">
-      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-primary me-2" %>
-      <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary" %>
+    <!-- ロゴ -->
+    <a class="navbar-brand text-white fw-bold fs-3" style="font-family: 'Inter', sans-serif;" href="/">
+      Re:Live
+    </a>
+
+    <!-- ボタン -->
+    <div class="ms-auto d-flex">
+      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-light me-2 custom-header-btn" %>
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-light text-primary custom-header-btn" %>
     </div>
   </div>
 </nav>

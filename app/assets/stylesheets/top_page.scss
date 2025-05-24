@@ -5,7 +5,7 @@
 
 .hero-img {
   width: 100%;
-  height: 400px !important; /* お好みで 300px 〜 500px 程度 */
+  height: 500px !important;
   object-fit: cover;
   display: block;
 }
@@ -19,8 +19,77 @@
   font-weight: bold;
 }
 
+.bg-relive {
+  background-color: #3A91B8 !important;
+  color: white;
+}
+
+.hero-overlay h1, .hero-overlay p {
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.story-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+}
+
+.footer-logo {
+  height: 48px;
+  width: auto;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #C3F5FD; /* アプリカラーアクセント */
+}
+
+.custom-footer {
+  background-color: #3A91B8;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #C3F5FD; /* ホバー時アクセントカラー */
+}
 
 .bg-relive {
   background-color: #3A91B8 !important;
   color: white;
+}
+
+.navbar .navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.custom-header-btn {
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.custom-header-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.btn-outline-light.custom-header-btn {
+  border-color: white;
+  color: white;
+}
+
+.btn-outline-light.custom-header-btn:hover {
+  background-color: #C3F5FD;
+  color: #3A91B8;
+  border-color: #C3F5FD;
+}
+
+.btn-light.custom-header-btn {
+  background-color: white;
+  color: #3A91B8;
+}
+
+.btn-light.custom-header-btn:hover {
+  background-color: #C3F5FD;
+  color: #3A91B8;
 }

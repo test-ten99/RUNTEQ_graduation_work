@@ -20,7 +20,9 @@
 
         <div class="mb-3">
           <%= f.label :date, "日時" %>
-          <%= f.date_select :date, {}, { class: "form-select d-inline w-auto me-2" } %>
+          <%= f.date_select :date,
+                { start_year: 2000, end_year: 2050 },
+                { class: "form-select d-inline w-auto me-2" } %>
         </div>
 
         <div class="mb-3">

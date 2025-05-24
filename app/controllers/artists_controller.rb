@@ -12,10 +12,16 @@ before_action :authenticate_user!
   def create
     @artist = current_user.artists.build(artist_params)
     if @artist.save
-      redirect_to artists_path, notice: "アーティストを登録しました。"
+      redirect_to @artist, notice: "アーティストを登録しました。"
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @artist = current_user.artists.find(params[:id])
+    spotify_artist = RSpotify::Artist.search(@artist.name).first
+    @spotify_artist_id = spotify_artist&.id
   end
 
   def edit
@@ -25,7 +31,7 @@ before_action :authenticate_user!
   def update
     @artist = current_user.artists.find(params[:id])
     if @artist.update(artist_params)
-      redirect_to artists_path, notice: "アーティスト情報を更新しました。"
+      redirect_to @artist, notice: "アーティスト情報を更新しました。"
     else
       render :edit, status: :unprocessable_entity
     end

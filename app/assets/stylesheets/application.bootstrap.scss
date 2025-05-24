@@ -12,3 +12,63 @@
   background-color: #b2eaf7;
   border-radius: 5px;
 }
+
+.relive-logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #3A91B8;
+}
+
+// サイドバー背景色とレイアウト
+.custom-sidebar {
+  width: 20%;
+  background-color: #3A91B8;
+  color: white;
+  min-height: 100vh;
+  border-right: 2px solid #2f7aa1;
+}
+
+// サイドバーのリンクスタイル
+.sidebar-link {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #56acd2;
+  color: white;
+  text-decoration: none;
+}
+
+// Re:Liveロゴ（全体統一）
+.relive-logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+// ログアウトリンク専用スタイル
+.logout-link {
+  background-color: #dc3545;
+  color: white;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  display: block;
+  width: 100%; // 他のリンクと幅を統一
+  transition: background-color 0.3s ease;
+}
+
+.logout-link:hover {
+  background-color: #e06666;
+  color: white;
+  text-decoration: none;
+}

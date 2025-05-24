@@ -1,7 +1,19 @@
-<footer class="bg-light text-center py-3 mt-5">
-  <div class="container">
-    <p class="mb-1">© 2025 Re:Live</p>
-    <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-secondary me-2 btn-sm" %>
-    <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-secondary btn-sm" %>
+<footer class="footer custom-footer text-white py-5">
+  <div class="container text-center">
+    <!-- ロゴエリア -->
+    <div class="mb-4">
+      <h2 class="display-6 fw-bold" style="font-family: 'Inter', sans-serif;">Re:Live</h2>
+    </div>
+
+    <!-- ナビゲーションリンク -->
+    <nav class="mb-3">
+      <a href="/#intro" class="text-white mx-2 text-decoration-none">アプリ紹介</a>
+      <a href="/#features" class="text-white mx-2 text-decoration-none">特徴</a>
+      <a href="/users/sign_up" class="text-white mx-2 text-decoration-none">新規登録</a>
+      <a href="/users/sign_in" class="text-white mx-2 text-decoration-none">ログイン</a>
+    </nav>
+
+    <!-- 利用規約 -->
+    <p class="small">© 2025 Re:Live | <a href="#" class="text-white text-decoration-underline">利用規約</a></p>
   </div>
 </footer>

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   # アーティスト登録・管理
-  resources :artists, only: [ :new, :create, :index, :edit, :update, :destroy ]
+  resources :artists
 
   # 不要な仮置きルートを削除
   # get "live_records/new" や get "live_records/create" は resources に含まれているため不要
