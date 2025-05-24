@@ -1,0 +1,73 @@
+<%= form_with(model: live_record, local: true, html: { multipart: true }) do |f| %>
+  <% if live_record.errors.any? %>
+    <div class="alert alert-danger">
+      <h4>入力にエラーがあります</h4>
+      <ul>
+        <% live_record.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= f.label :artist_id, "アーティスト名" %>
+    <%= f.collection_select :artist_id, artists, :id, :name, { prompt: "選択してください" }, { class: "form-select" } %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :live_title, "ライブ名" %>
+    <%= f.text_field :live_title, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :location, "会場" %>
+    <%= f.text_field :location, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :date, "日時" %>
+    <%= f.date_select :date,
+          { start_year: 2000, end_year: 2050 },
+          { class: "form-select d-inline w-auto me-2" } %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :image, "写真" %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+
+  <h4 class="mt-4 mb-3">セットリスト</h4>
+  <div data-controller="song-form">
+    <div id="songs" data-song-form-target="container">
+      <% if live_record.persisted? %>
+        <%= f.fields_for :songs, live_record.songs.sort_by(&:track_number) do |song_form| %>
+          <div class="mb-2 song-fields">
+            <% index = song_form.index || 0 %>
+            <label class="form-label"><%= "#{index.to_i + 1}曲目" %></label>
+            <div class="d-flex align-items-start gap-2">
+              <%= song_form.text_field :title, class: "form-control flex-fill", style: "height: 38px;" %>
+              <%= song_form.hidden_field :id %>
+              <%= song_form.hidden_field :track_number, value: song_form.object.track_number %>
+              <%= song_form.hidden_field :_destroy, value: "false", data: { destroy: true } %>
+              <button type="button"
+                      class="btn btn-outline-danger btn-sm"
+                      style="height: 37px; padding-top: 6px; padding-bottom: 6px; white-space: nowrap;"
+                      data-action="click->song-form#removeSong">
+                  削除
+              </button>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <button type="button" class="btn btn-outline-secondary btn-sm mt-2" data-action="click->song-form#addSong">
+      曲を追加する
+    </button>
+  </div>
+
+  <div class="mt-4 text-center">
+    <%= f.submit submit_label, class: "btn btn-primary px-5" %>
+  </div>
+<% end %>
