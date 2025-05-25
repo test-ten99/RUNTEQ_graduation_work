@@ -32,3 +32,14 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+r2:
+  service: S3
+  access_key_id: <%= ENV["AWS_ACCESS_KEY_ID"] %>
+  secret_access_key: <%= ENV["AWS_SECRET_ACCESS_KEY"] %>
+  region: auto
+  bucket: relive-bucket
+  endpoint: https://581c24db4472088276bea574c232a80b.r2.cloudflarestorage.com
+  force_path_style: true
+  upload:
+    checksum: false
